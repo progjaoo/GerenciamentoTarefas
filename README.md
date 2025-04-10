@@ -32,4 +32,3 @@ Este é o backend de uma aplicação de gerenciamento de tarefas, desenvolvido e
 
 ```bash
 git clone https://github.com/progjaoo/GerenciamentoTarefas.git
-cd GerenciamentoTarefas/backend
