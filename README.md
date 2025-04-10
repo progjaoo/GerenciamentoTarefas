@@ -26,7 +26,7 @@ Este é o backend de uma aplicação de gerenciamento de tarefas, desenvolvido e
 
 ## ⚙️ Como Rodar o Projeto Localmente
 - Na classe program.cs troque a linha onde está policy.WithOrigins("seu_localhost_do_front")
-
+- Nesse repositório está o script do banco script_bd_ToDoList, rode-o em seu SSMS ou qualquer gerenciador de banco de dados
 
 ### 1. Clone o repositório
 
