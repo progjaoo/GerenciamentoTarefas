@@ -1,6 +1,6 @@
 # 📌 Gerenciamento de Tarefas - Backend (.NET 8 API)
 
-Este é o backend de uma aplicação de gerenciamento de tarefas, desenvolvido em **ASP.NET Core 8** utilizando **CQRS com MediatR**, **FluentValidation**, e **EF Core com SQL Server**. A API fornece endpoints para criar, listar, editar e deletar tarefas.
+Este é o backend de uma aplicação de gerenciamento de tarefas, desenvolvido em **ASP.NET Core 8** utilizando **CQRS com MediatR**, **FluentValidation**, e **EF Core com SQL Server**. A API fornece endpoints para criar, listar, editar e deletar tarefas, finalizar tarefas.
 
 ---
 
