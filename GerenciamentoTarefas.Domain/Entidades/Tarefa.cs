@@ -27,10 +27,12 @@ public partial class Tarefa
     {
         Titulo = titulo;
         Descricao = descricao;
+        if (Status == StatusTarefa.Concluida && status != StatusTarefa.Concluida)
+        {
+            DataConclusao = null;
+        }
+
         Status = status;
     }
-    public void FinalizarTarefa()
-    {
 
-    }
 }

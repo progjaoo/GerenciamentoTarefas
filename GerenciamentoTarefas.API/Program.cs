@@ -26,6 +26,7 @@ builder.Services.AddScoped<ITarefaRepository, TarefaRepository>();
 
 //VALIDATOR
 builder.Services.AddTransient<IValidator<Tarefa>, TarefaValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<UpdateTarefaCommandValidator>();
 
 //MediatR
 builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
