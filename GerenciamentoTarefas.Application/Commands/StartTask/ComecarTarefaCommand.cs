@@ -10,6 +10,7 @@ namespace GerenciamentoTarefas.Application.Commands.StartTask
         {
             Id = id;
         }
+        public ComecarTarefaCommand() { }
     }
 
 }

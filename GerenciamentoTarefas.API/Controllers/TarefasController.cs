@@ -70,7 +70,9 @@ namespace GerenciamentoTarefas.API.Controllers
         [HttpPut("comecar/{id}")]
         public async Task<IActionResult> ComecarTarefa(int id)
         {
-            var resultado = await _mediator.Send(new ComecarTarefaCommand(id));
+            var query = new ComecarTarefaCommand(id);  
+            
+            var resultado =  await _mediator.Send(query);
 
             return Ok(resultado);
         }
