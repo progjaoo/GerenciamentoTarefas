@@ -7,17 +7,16 @@ Este é o backend de uma aplicação de gerenciamento de tarefas, desenvolvido e
 ## ✅ Tecnologias Utilizadas
 
 - ASP.NET Core 8
-- MediatR para usar o (CQRS) para separação das responsabilidades
-- Entity Framework Core
-- SQL Server
-- FluentValidation
-- Swagger (OpenAPI)
+- Entity Framework Core para persistência de dados no SQL Server
+- Repository Patterns (Padrão Repositório)
+- CQRS para separação das responsabilidades do Sistema aplicando o Design Pattern Mediator
+- Validação de API (fluentValidation)
 
 ---
 
 ## 🧱 Estrutura do Projeto
 
-- `Controllers/` - Endpoints da API
+- `API/` - Endpoints da API
 - `Application/` - Commands, Queries e Handlers
 - `Domain/` - Entidades e interfaces
 - `Infrastructure/` - Repositórios e DbContext
@@ -25,7 +24,6 @@ Este é o backend de uma aplicação de gerenciamento de tarefas, desenvolvido e
 ---
 
 ## ⚙️ Como Rodar o Projeto Localmente
-- Na classe program.cs troque a linha onde está policy.WithOrigins("seu_localhost_do_front")
 - Nesse repositório está o script do banco script_bd_ToDoList, rode-o em seu SSMS ou qualquer gerenciador de banco de dados
 
 ### 1. Clone o repositório
