@@ -11,6 +11,7 @@ Este é o backend de uma aplicação de gerenciamento de tarefas, desenvolvido e
 - Repository Patterns (Padrão Repositório)
 - CQRS para separação das responsabilidades do Sistema aplicando o Design Pattern Mediator
 - Validação de API (fluentValidation)
+- Middlewares de validação
 
 ---
 
