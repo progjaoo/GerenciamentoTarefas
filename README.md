@@ -12,6 +12,7 @@ Este é o backend de uma aplicação de gerenciamento de tarefas, desenvolvido e
 - CQRS para separação das responsabilidades do Sistema aplicando o Design Pattern Mediator
 - Validação de API (fluentValidation)
 - Middlewares de validação
+- SQL Server para a parte de banco de dados e SSMS para gerenciamento do banco de dados
 
 ---
 
