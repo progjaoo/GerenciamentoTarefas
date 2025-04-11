@@ -12,7 +12,7 @@ public partial class Tarefa
     {
         Titulo = titulo;
         Descricao = descricao;
-        Status = StatusTarefa.EmProgresso;
+        Status = StatusTarefa.Pendente;
         DataCriacao = DateTime.Now;
     }
 

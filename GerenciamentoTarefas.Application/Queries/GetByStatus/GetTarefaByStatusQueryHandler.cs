@@ -30,10 +30,7 @@ namespace GerenciamentoTarefas.Application.Queries.GetByStatus
 
                 return tarefas.Select(t => new TarefaViewModel
                 (
-                    t.Titulo,
-                    t.Descricao,
-                    t.DataConclusao,
-                    t.Status
+                    t.Id,t.Titulo,t.Descricao,t.Status,t.DataConclusao,t.DataCriacao
                 )).ToList();
             }
             catch (NotFoundException)

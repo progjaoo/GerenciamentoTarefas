@@ -1,6 +1,7 @@
 ﻿using GerenciamentoTarefas.Application.Commands.Create;
 using GerenciamentoTarefas.Application.Commands.Delete;
 using GerenciamentoTarefas.Application.Commands.FinishTask;
+using GerenciamentoTarefas.Application.Commands.StartTask;
 using GerenciamentoTarefas.Application.Commands.Update;
 using GerenciamentoTarefas.Application.Queries.GetAll;
 using GerenciamentoTarefas.Application.Queries.GetById;
@@ -65,6 +66,13 @@ namespace GerenciamentoTarefas.API.Controllers
 
             await _mediator.Send(command);
             return NoContent();
+        }
+        [HttpPut("comecar/{id}")]
+        public async Task<IActionResult> ComecarTarefa(int id)
+        {
+            var resultado = await _mediator.Send(new ComecarTarefaCommand(id));
+
+            return Ok(resultado);
         }
         [HttpDelete("{id}/deletarTarefa")]
         public async Task<IActionResult> Delete(int id)
