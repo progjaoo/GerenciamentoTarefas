@@ -45,8 +45,8 @@ namespace GerenciamentoTarefas.API.Controllers
         [HttpGet("tarefaPorStatus")]
         public async Task<IActionResult> GetAllByStatus(StatusTarefa tarefa)
         {
-            var guery = new GetTarefaByStatusQuery(tarefa);
-            var listTarefas = await _mediator.Send(guery);
+            var query = new GetTarefaByStatusQuery(tarefa);
+            var listTarefas = await _mediator.Send(query);
 
             return Ok(listTarefas);
         }
@@ -58,12 +58,15 @@ namespace GerenciamentoTarefas.API.Controllers
             return CreatedAtAction(nameof(GetById), new { id = id }, new { id = id });
         }
         [HttpPut("{id}/atualizarTarefa")]
-        public async Task<IActionResult> Put(UpdateTarefaCommand command)
+        public async Task<IActionResult> Put(int id, [FromBody] UpdateTarefaCommand command)
         {
+            if (id != command.Id)
+                return BadRequest("O ID da URL é diferente do ID do corpo da requisição.");
+
             await _mediator.Send(command);
             return NoContent();
         }
-        [HttpDelete("{id}/atualizarTarefa")]
+        [HttpDelete("{id}/deletarTarefa")]
         public async Task<IActionResult> Delete(int id)
         {
             var command = new DeleteTarefaCommand(id);
@@ -103,10 +106,5 @@ namespace GerenciamentoTarefas.API.Controllers
                 return StatusCode(500, "Ocorreu um erro interno ao finalizar a tarefa."); 
             }
         }
-    }
-    public class FinalizarTarefaRequest
-    {
-        public int Id { get; set; }
-        public DateTime DataConclusao { get; set; }
     }
 }

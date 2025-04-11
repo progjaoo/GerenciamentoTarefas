@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static GerenciamentoTarefas.Domain.Exceptions.Excepetions;
+using static GerenciamentoTarefas.Domain.Exceptions.Exceptions;
 
 namespace GerenciamentoTarefas.Application.Queries.GetByStatus
 {
@@ -40,7 +40,7 @@ namespace GerenciamentoTarefas.Application.Queries.GetByStatus
             {
                 throw;
             }
-            catch (Excepetions ex)
+            catch (Exceptions ex)
             {
                 throw new BusinessException($"Erro ao buscar tarefa: {ex.Message}");
             }

@@ -5,7 +5,7 @@ using GerenciamentoTarefas.Domain.Exceptions;
 using GerenciamentoTarefas.Domain.Interface;
 using MediatR;
 using System.ComponentModel.DataAnnotations;
-using static GerenciamentoTarefas.Domain.Exceptions.Excepetions;
+using static GerenciamentoTarefas.Domain.Exceptions.Exceptions;
 
 namespace GerenciamentoTarefas.Application.Commands.Create
 {
@@ -37,9 +37,13 @@ namespace GerenciamentoTarefas.Application.Commands.Create
 
                 return tarefa.Id;
             }
-            catch (Excepetions ex)
+            catch (Exceptions.BusinessException ex)
             {
-                throw new BusinessException($"Erro ao criar tarefa: {ex.Message}");
+                throw; 
+            }
+            catch (Exceptions ex)
+            {
+                throw new Exceptions.BusinessException($"Erro inesperado ao criar tarefa: {ex.Message}");
             }
         }
     }

@@ -1,5 +1,6 @@
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using GerenciamentoTarefas.API.Middlewares;
 using GerenciamentoTarefas.Application.Queries.GetAll;
 using GerenciamentoTarefas.Application.Validators;
 using GerenciamentoTarefas.Domain.Entidades;
@@ -32,14 +33,14 @@ builder.Services.AddValidatorsFromAssemblyContaining<UpdateTarefaCommandValidato
 builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
 builder.Services.AddMediatR(typeof(GetAllTarefasQueryHandler).Assembly);
 
+
+
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowLocalhost5173", policy =>
+    options.AddDefaultPolicy(
+    policy =>
     {
-        policy.WithOrigins("http://localhost:5173") 
-              .AllowAnyHeader()
-              .AllowAnyMethod()
-              .AllowCredentials(); 
+        policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
     });
 });
 
@@ -51,9 +52,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-app.UseCors("AllowLocalhost5173");
+app.UseCors();
 
 app.UseHttpsRedirection();
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 app.UseAuthorization();
 

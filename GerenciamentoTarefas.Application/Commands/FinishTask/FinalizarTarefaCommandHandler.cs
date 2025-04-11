@@ -34,5 +34,4 @@ namespace GerenciamentoTarefas.Application.Commands.FinishTask
             return true;
         }
     }
-
 }

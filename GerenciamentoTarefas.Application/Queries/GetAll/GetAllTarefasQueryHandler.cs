@@ -2,7 +2,7 @@
 using GerenciamentoTarefas.Domain.Exceptions;
 using GerenciamentoTarefas.Domain.Interface;
 using MediatR;
-using static GerenciamentoTarefas.Domain.Exceptions.Excepetions;
+using static GerenciamentoTarefas.Domain.Exceptions.Exceptions;
 
 namespace GerenciamentoTarefas.Application.Queries.GetAll
 {
@@ -27,12 +27,13 @@ namespace GerenciamentoTarefas.Application.Queries.GetAll
                     t.Titulo,
                     t.Descricao,
                     t.Status,
-                    t.DataConclusao
+                    t.DataConclusao,
+                    t.DataCriacao
                 )).ToList();
 
                 return tarefaViewModel;
             }
-            catch (Excepetions ex)
+            catch (Exceptions ex)
             {
                 throw new BusinessException($"Erro ao buscar tarefas: {ex.Message}");
             }

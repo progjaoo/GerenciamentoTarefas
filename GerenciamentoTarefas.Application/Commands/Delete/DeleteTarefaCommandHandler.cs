@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static GerenciamentoTarefas.Domain.Exceptions.Excepetions;
+using static GerenciamentoTarefas.Domain.Exceptions.Exceptions;
 
 namespace GerenciamentoTarefas.Application.Commands.Delete
 {
@@ -35,9 +35,9 @@ namespace GerenciamentoTarefas.Application.Commands.Delete
             {
                 throw;
             }
-            catch (Excepetions ex)
+            catch (Exceptions ex)
             {
-                throw new Excepetions.BusinessException($"Erro ao deletar tarefa: {ex.Message}");
+                throw new Exceptions.BusinessException($"Erro ao deletar tarefa: {ex.Message}");
             }
         }
     }

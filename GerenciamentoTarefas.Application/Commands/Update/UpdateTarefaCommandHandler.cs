@@ -3,7 +3,7 @@ using GerenciamentoTarefas.Domain.Entidades;
 using GerenciamentoTarefas.Domain.Exceptions;
 using GerenciamentoTarefas.Domain.Interface;
 using MediatR;
-using static GerenciamentoTarefas.Domain.Exceptions.Excepetions;
+using static GerenciamentoTarefas.Domain.Exceptions.Exceptions;
 
 namespace GerenciamentoTarefas.Application.Commands.Update
 {
@@ -43,7 +43,7 @@ namespace GerenciamentoTarefas.Application.Commands.Update
             {
                 throw;
             }
-            catch (Excepetions ex)
+            catch (Exceptions ex)
             {
                 throw new BusinessException($"Erro ao atualizar tarefa: {ex.Message}");
             }

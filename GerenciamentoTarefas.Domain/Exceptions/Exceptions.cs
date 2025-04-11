@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GerenciamentoTarefas.Domain.Exceptions
 {
-    public class Excepetions : Exception
+    public class Exceptions : Exception
     {
         public class NotFoundException : Exception
         {
